@@ -2,6 +2,8 @@
 
 Quickly build RESTful APIs.
 
+[Github](https://github.com/DEEJ4Y/emfrest) [npm](https://www.npmjs.com/package/emfrest)
+
 ## Installation
 
 ```sh

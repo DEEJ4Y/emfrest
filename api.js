@@ -3,7 +3,7 @@ const { emfRouter } = require("./router");
 /**
  * @description Entry point for the RESTful API.
  *
- * @param {express()} app Your express app.
+ * @param {express} app Your express app.
  * @param {object} apiData Model and route data for the api.
  */
 const emfAPI = (app, { model, modelName, routePrefix }) => {

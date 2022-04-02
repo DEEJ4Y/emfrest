@@ -1,0 +1,10 @@
+{
+  "templates": {
+    "systemName": "emfrest",
+    "systemSummary": "Express Mongoose Fast REST API",
+    "systemColor": "#198754",
+    "footer": "Copyright © The contributors to emfrest",
+    "inlineNav": true,
+    "search": true
+  }
+}
