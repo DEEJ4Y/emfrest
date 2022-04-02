@@ -1,6 +1,6 @@
 # Express Mongoose Fast REST API
 
-Quickly build RESTful APIs.
+Quickly build RESTful APIs with Express and Mongoose.
 
 [Documentation](https://deej4y.github.io/emfrest/)
 
