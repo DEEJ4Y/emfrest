@@ -2,7 +2,11 @@
 
 Quickly build RESTful APIs.
 
-[Github](https://github.com/DEEJ4Y/emfrest) [npm](https://www.npmjs.com/package/emfrest)
+[Documentation](https://deej4y.github.io/emfrest/)
+
+[Github](https://github.com/DEEJ4Y/emfrest)
+
+[npm](https://www.npmjs.com/package/emfrest)
 
 ## Installation
 
