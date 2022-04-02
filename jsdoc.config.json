@@ -3,7 +3,8 @@
     "systemName": "emfrest",
     "systemSummary": "Express Mongoose Fast REST API",
     "systemColor": "#198754",
-    "footer": "Copyright © The contributors to emfrest",
+    "footer": "Copyright © The contributors of emfrest",
+    "copyright": "",
     "inlineNav": true,
     "search": true
   }
