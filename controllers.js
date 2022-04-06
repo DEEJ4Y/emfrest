@@ -9,6 +9,8 @@ const {
 const { ErrorResponse } = require("./utils");
 
 /**
+ * @require const { getAllController } = require("emfrest/controllers")
+ *
  * @description Request/Response handler function to get all of a resource.
  *
  * @param {express.request} req
@@ -38,6 +40,8 @@ exports.getAllController = asyncMiddlewareHandler(async (req, res, next) => {
 });
 
 /**
+ * @require const { createResourceController } = require("emfrest/controllers")
+ *
  * @description Request/Response handler function to create a resource.
  *
  * @param {express.request} req
@@ -74,6 +78,8 @@ exports.createResourceController = asyncMiddlewareHandler(
 );
 
 /**
+ * @require const { getOneByIdController } = require("emfrest/controllers")
+ *
  * @description Request/Response handler function to fetch a document by its MongoDB ObjectId.
  *
  * @param {express.request} req
@@ -110,6 +116,8 @@ exports.getOneByIdController = asyncMiddlewareHandler(
 );
 
 /**
+ * @require const { updateOneByIdController } = require("emfrest/controllers")
+ *
  * @description Request/Response handler function to update a document by its MongoDB ObjectId.
  *
  * @param {express.request} req
@@ -148,6 +156,8 @@ exports.updateOneByIdController = asyncMiddlewareHandler(
 );
 
 /**
+ * @require const { deleteOneByIdController } = require("emfrest/controllers")
+ *
  * @description Request/Response handler function to delete a document by its MongoDB ObjectId.
  *
  * @param {express.request} req

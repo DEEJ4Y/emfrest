@@ -1,6 +1,8 @@
 const { asyncHandler } = require("./middleware");
 
 /**
+ * @require const { getAllService } = require("emfrest/services")
+ *
  * @description Database query to fetch all documents of a collection.
  *
  * @param {mongoose.model} model Mongoose model for the collection being queried.
@@ -15,7 +17,9 @@ exports.getAllService = asyncHandler(async (model, query) => {
 });
 
 /**
- * @description Database query to create a document by it's ObjectId.
+ * @require const { createResourceService } = require("emfrest/services")
+ *
+ * @description Database query to create a document.
  *
  * @param {mongoose.model} model Mongoose model for the collection being queried.
  * @param {object} newData Object with fields to be created in the specified document.
@@ -28,6 +32,8 @@ exports.createResourceService = asyncHandler(async (model, data) => {
 });
 
 /**
+ * @require const { getOneByIdService } = require("emfrest/services")
+ *
  * @description Database query to fetch a document by it's ObjectId.
  *
  * @param {mongoose.model} model Mongoose model for the collection being queried.
@@ -41,6 +47,8 @@ exports.getOneByIdService = asyncHandler(async (model, id) => {
 });
 
 /**
+ * @require const { updateOneByIdService } = require("emfrest/services")
+ *
  * @description Database query to update a document by it's ObjectId.
  *
  * @param {mongoose.model} model Mongoose model for the collection being queried.
@@ -58,6 +66,8 @@ exports.updateOneByIdService = asyncHandler(async (model, id, newData) => {
 });
 
 /**
+ * @require const { deleteByIdService } = require("emfrest/services")
+ *
  * @description Database query to delete a document by it's ObjectId.
  *
  * @param {mongoose.model} model Mongoose model for the collection being queried.

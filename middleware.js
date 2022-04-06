@@ -1,6 +1,8 @@
 const { ErrorResponse } = require("./utils");
 
 /**
+ * @require const { asyncMiddlewareHandler } = require("emfrest/middleware")
+ *
  * @description Wrapper for any async middleware functions.
  *
  * @param {function} fn Async middleware function to be wrapped.
@@ -15,6 +17,8 @@ exports.asyncMiddlewareHandler = (fn) => (req, res, next) =>
   Promise.resolve(fn(req, res, next)).catch(next);
 
 /**
+ * @require const { asyncHandler } = require("emfrest/middleware")
+ *
  * @description Wrapper for any async functions.
  *
  * @param {function} fn Async function to be wrapped.
@@ -36,6 +40,8 @@ exports.asyncHandler = (fn) => async (a, b, c, d, e) => {
 };
 
 /**
+ * @require const { errorHandler } = require("emfrest/middleware")
+ *
  * @description Function to send a response with an error.
  *
  * @param {object} err Error object.
@@ -76,6 +82,8 @@ exports.errorHandler = (err, req, res, next) => {
 };
 
 /**
+ * @require const { successfulResponse } = require("emfrest/middleware")
+ *
  * @description Function to send a successful response.
  *
  * @param {express.response} res Express response object.
@@ -92,6 +100,8 @@ exports.successfulResponse = (res, statusCode, message, data) => {
 };
 
 /**
+ * @require const { appendModelData } = require("emfrest/middleware")
+ *
  * @description Middleware function to add model and modelName to the request object.
  *
  * @param {mongoose.model} model Mongoose model.

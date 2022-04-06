@@ -1,22 +1,26 @@
 {
   "name": "emfrest",
-  "version": "1.0.258",
+  "version": "1.0.259",
   "description": "Quickly build RESTful APIs with Express and Mongoose.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs": "jsdoc ./ -c ./jsdoc.config.json -d ./docs/ -t ./node_modules/foodoc/template -R README.md",
-    "deploy-docs": "npm run docs && git add . && git commit -m \"Add updated documentation\" && git push"
+    "deploy-docs": "npm run docs && git add . && git commit -m \"chore: Add updated documentation\" && git push"
   },
   "keywords": [
+    "emfrest",
+    "api",
+    "api-rest",
     "express",
-    "mongoose",
+    "expressjs",
     "rest",
     "restapi",
-    "api",
-    "mongodb",
-    "fast",
-    "emfrest"
+    "rest-api",
+    "restful-api",
+    "mongoose",
+    "mongoosejs",
+    "mongodb"
   ],
   "repository": {
     "type": "git",
