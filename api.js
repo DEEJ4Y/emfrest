@@ -1,7 +1,7 @@
 const { emfRouter } = require("./router");
 
 /**
- * @require const { emfAPI } = require("emfrest/api")
+ * @exports emfrest/api
  *
  * @description Entry point for the RESTful API.
  *

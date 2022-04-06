@@ -1,7 +1,7 @@
 const { ErrorResponse } = require("./utils");
 
 /**
- * @require const { asyncMiddlewareHandler } = require("emfrest/middleware")
+ * @exports emfrest/middleware
  *
  * @description Wrapper for any async middleware functions.
  *
@@ -17,7 +17,7 @@ exports.asyncMiddlewareHandler = (fn) => (req, res, next) =>
   Promise.resolve(fn(req, res, next)).catch(next);
 
 /**
- * @require const { asyncHandler } = require("emfrest/middleware")
+ * @exports emfrest/middleware
  *
  * @description Wrapper for any async functions.
  *
@@ -40,7 +40,7 @@ exports.asyncHandler = (fn) => async (a, b, c, d, e) => {
 };
 
 /**
- * @require const { errorHandler } = require("emfrest/middleware")
+ * @exports emfrest/middleware
  *
  * @description Function to send a response with an error.
  *
@@ -82,7 +82,7 @@ exports.errorHandler = (err, req, res, next) => {
 };
 
 /**
- * @require const { successfulResponse } = require("emfrest/middleware")
+ * @exports emfrest/middleware
  *
  * @description Function to send a successful response.
  *
@@ -100,7 +100,7 @@ exports.successfulResponse = (res, statusCode, message, data) => {
 };
 
 /**
- * @require const { appendModelData } = require("emfrest/middleware")
+ * @exports emfrest/middleware
  *
  * @description Middleware function to add model and modelName to the request object.
  *

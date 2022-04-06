@@ -63,8 +63,7 @@
 			</div>
 			<div class="navbar-collapse collapse" id="topNavigation">
 				<ul class="nav navbar-nav">
-							<li><a href="global.html">Globals</a></li>
-							<li><a href="list_class.html">Classes</a></li>
+							<li><a href="list_module.html">Modules</a></li>
 				</ul>
 					<!-- start:lunr-search-navbar.hbs -->
 					<form class="navbar-form navbar-right" role="search">
@@ -94,7 +93,7 @@
 			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">const { asyncHandler } = require("./middleware");
 
 /**
- * @require const { getAllService } = require("emfrest/services")
+ * @exports emfrest/services
  *
  * @description Database query to fetch all documents of a collection.
  *
@@ -110,7 +109,7 @@ exports.getAllService = asyncHandler(async (model, query) => {
 });
 
 /**
- * @require const { createResourceService } = require("emfrest/services")
+ * @exports emfrest/services
  *
  * @description Database query to create a document.
  *
@@ -125,7 +124,7 @@ exports.createResourceService = asyncHandler(async (model, data) => {
 });
 
 /**
- * @require const { getOneByIdService } = require("emfrest/services")
+ * @exports emfrest/services
  *
  * @description Database query to fetch a document by it's ObjectId.
  *
@@ -140,7 +139,7 @@ exports.getOneByIdService = asyncHandler(async (model, id) => {
 });
 
 /**
- * @require const { updateOneByIdService } = require("emfrest/services")
+ * @exports emfrest/services
  *
  * @description Database query to update a document by it's ObjectId.
  *
@@ -159,7 +158,7 @@ exports.updateOneByIdService = asyncHandler(async (model, id, newData) => {
 });
 
 /**
- * @require const { deleteByIdService } = require("emfrest/services")
+ * @exports emfrest/services
  *
  * @description Database query to delete a document by it's ObjectId.
  *

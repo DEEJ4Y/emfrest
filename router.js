@@ -10,7 +10,7 @@ const { appendModelData } = require("./middleware");
 const router = require("express").Router({ mergeParams: true });
 
 /**
- * @require const { emfRouter } = require("emfrest/router")
+ * @exports emfrest/router
  *
  * @description An express router for a resource.
  *
