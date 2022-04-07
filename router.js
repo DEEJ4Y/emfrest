@@ -10,8 +10,6 @@ const { appendModelData } = require("./middleware");
 const router = require("express").Router({ mergeParams: true });
 
 /**
- * @exports emfrest/router
- *
  * @description An express router for a resource.
  *
  * @param {mongoose.model} model Mongoose model.

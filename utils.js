@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 /**
- * @exports emfrest/utils
  *
  * @description Class to add a message and status code to the error object.
  */
@@ -19,7 +18,6 @@ exports.ErrorResponse = class ErrorResponse extends Error {
 };
 
 /**
- * @exports emfrest/utils
  *
  * @description Connect to a Mongodb database.
  *

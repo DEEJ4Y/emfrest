@@ -9,7 +9,6 @@ const {
 const { ErrorResponse } = require("./utils");
 
 /**
- * @exports emfrest/controllers
  *
  * @description Request/Response handler function to get all of a resource.
  *
@@ -40,7 +39,6 @@ exports.getAllController = asyncMiddlewareHandler(async (req, res, next) => {
 });
 
 /**
- * @exports emfrest/controllers
  *
  * @description Request/Response handler function to create a resource.
  *
@@ -78,7 +76,6 @@ exports.createResourceController = asyncMiddlewareHandler(
 );
 
 /**
- * @exports emfrest/controllers
  *
  * @description Request/Response handler function to fetch a document by its MongoDB ObjectId.
  *
@@ -116,7 +113,6 @@ exports.getOneByIdController = asyncMiddlewareHandler(
 );
 
 /**
- * @exports emfrest/controllers
  *
  * @description Request/Response handler function to update a document by its MongoDB ObjectId.
  *
@@ -156,7 +152,6 @@ exports.updateOneByIdController = asyncMiddlewareHandler(
 );
 
 /**
- * @exports emfrest/controllers
  *
  * @description Request/Response handler function to delete a document by its MongoDB ObjectId.
  *

@@ -1,7 +1,6 @@
 const { asyncHandler } = require("./middleware");
 
 /**
- * @exports emfrest/services
  *
  * @description Database query to fetch all documents of a collection.
  *
@@ -17,7 +16,6 @@ exports.getAllService = asyncHandler(async (model, query) => {
 });
 
 /**
- * @exports emfrest/services
  *
  * @description Database query to create a document.
  *
@@ -32,7 +30,6 @@ exports.createResourceService = asyncHandler(async (model, data) => {
 });
 
 /**
- * @exports emfrest/services
  *
  * @description Database query to fetch a document by it's ObjectId.
  *
@@ -47,7 +44,6 @@ exports.getOneByIdService = asyncHandler(async (model, id) => {
 });
 
 /**
- * @exports emfrest/services
  *
  * @description Database query to update a document by it's ObjectId.
  *
@@ -66,7 +62,6 @@ exports.updateOneByIdService = asyncHandler(async (model, id, newData) => {
 });
 
 /**
- * @exports emfrest/services
  *
  * @description Database query to delete a document by it's ObjectId.
  *
