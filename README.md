@@ -203,3 +203,27 @@ const server = app.listen(PORT, () =>
 
 handlePromiseRejections(server);
 ```
+
+## Reusable Functions
+
+### Services
+
+Service functions are used to make calls to your MongoDB database using your mongoose model.
+
+1. [Get All documents of a model with a query(optional).](https://deej4y.github.io/emfrest/global.html#getAllService)
+2. [Create a document.](https://deej4y.github.io/emfrest/global.html#createResourceService)
+3. [Get a document by its ObjectId.](https://deej4y.github.io/emfrest/global.html#getOneByIdService)
+4. [Update a document by its ObjectId.](https://deej4y.github.io/emfrest/global.html#updateOneByIdService)
+5. [Delete a document by its ObjectId.](https://deej4y.github.io/emfrest/global.html#deleteByIdService)
+
+### Utilities
+
+Utility functions to code faster
+
+1. [Create an error object with a message and http status code](https://deej4y.github.io/emfrest/ErrorResponse.html#newerrorresponse-message-statuscode).
+2. [Connect to a MongoDB database](https://deej4y.github.io/emfrest/global.html#connectDB).
+3. [Promise rejection handler](https://deej4y.github.io/emfrest/global.html#handlePromiseRejections).
+
+## Liked emfrest?
+
+Enjoyed making your APIs faster? Star [efmrest](https://github.com/DEEJ4Y/emfrest) on [Github](https://github.com/DEEJ4Y/emfrest).
