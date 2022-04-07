@@ -3,6 +3,7 @@ const { asyncHandler } = require("./middleware");
 /**
  * @example
  * const { getAllService } = require("emfrest/services")
+ *
  * const arrayOfDocuments = await getAllService(model, query)
  *
  * @description Database query to fetch all documents of a collection.
@@ -21,6 +22,7 @@ exports.getAllService = asyncHandler(async (model, query) => {
 /**
  * @example
  * const { createResourceService } = require("emfrest/services")
+ *
  * const document = await createResourceService(model, newDocumentData)
  *
  * @description Database query to create a document.
@@ -38,6 +40,7 @@ exports.createResourceService = asyncHandler(async (model, data) => {
 /**
  * @example
  * const { getOneByIdService } = require("emfrest/services")
+ *
  * const document = await getOneByIdService(model, documentObjectId)
  *
  * @description Database query to fetch a document by it's ObjectId.
@@ -55,6 +58,7 @@ exports.getOneByIdService = asyncHandler(async (model, id) => {
 /**
  * @example
  * const { updateOneByIdService } = require("emfrest/services")
+ *
  * const document = await updateOneByIdService(model, documentObjectId, newDocumentData)
  *
  * @description Database query to update a document by it's ObjectId.
@@ -76,6 +80,7 @@ exports.updateOneByIdService = asyncHandler(async (model, id, newData) => {
 /**
  * @example
  * const { deleteByIdService } = require("emfrest/services")
+ *
  * const document = await deleteByIdService(model, documentObjectId)
  *
  * @description Database query to delete a document by it's ObjectId.
