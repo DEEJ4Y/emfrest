@@ -6,6 +6,6 @@
     "footer": "Copyright © The contributors of emfrest",
     "copyright": "",
     "inlineNav": true,
-    "search": true
+    "search": false
   }
 }
