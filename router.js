@@ -13,6 +13,7 @@ const router = require("express").Router({ mergeParams: true });
  * @example
  * const { emfRouter } = require("emfrest/router")
  *
+ * @example <caption>Usage</caption>
  * app.use("/modelName", emfRouter(model, modelName))
  *
  * @description An express router for a resource.

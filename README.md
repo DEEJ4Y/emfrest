@@ -2,11 +2,13 @@
 
 Quickly build RESTful APIs with Express and Mongoose.
 
-[Documentation](https://deej4y.github.io/emfrest/) [reusable functions](https://deej4y.github.io/emfrest/global.html)
+[Documentation](https://deej4y.github.io/emfrest/)
 
 [Github](https://github.com/DEEJ4Y/emfrest)
 
 [npm](https://www.npmjs.com/package/emfrest)
+
+Have a look at the list of [reusable functions](https://deej4y.github.io/emfrest/global.html).
 
 ## Installation
 
@@ -201,7 +203,3 @@ const server = app.listen(PORT, () =>
 
 handlePromiseRejections(server);
 ```
-
-## Reusable functions
-
-Have a look at the list of [reusable functions](https://deej4y.github.io/emfrest/global.html).

@@ -27,6 +27,7 @@ exports.asyncMiddlewareHandler = (fn) => (req, res, next) =>
  * @example
  * const { asyncHandler } = require("emfrest/middleware")
  *
+ * @example <caption>Usage</caption>
  * const anAsyncFunction = asyncHandler((a, b, c, d, e) => {
  *    const data = await something()
  *
@@ -57,6 +58,7 @@ exports.asyncHandler = (fn) => async (a, b, c, d, e) => {
  * @example
  * const { errorHandler } = require("emfrest")
  *
+ * @example <caption>Usage</caption>
  * app.use(errorHandler);
  *
  * @description Function to send a response with an error.
@@ -102,6 +104,7 @@ exports.errorHandler = (err, req, res, next) => {
  * @example
  * const { successfulResponse } = require("emfrest/middleware")
  *
+ * @example <caption>Usage</caption>
  * successfulResponse(
  *   res,
  *   200,
@@ -128,6 +131,7 @@ exports.successfulResponse = (res, statusCode, message, data) => {
  * @example
  * const { appendModelData } = require("emfrest/middleware")
  *
+ * @example <caption>Usage</caption>
  * router
  *  .route(`/:${modelName}Id`)
  *  .get(appendModelData(model, modelName), getOneByIdController)

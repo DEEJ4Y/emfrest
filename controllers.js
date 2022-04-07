@@ -12,6 +12,7 @@ const { ErrorResponse } = require("./utils");
  * @example
  * const { getAllController } = require("emfrest/controllers")
  *
+ * @example <caption>Usage</caption>
  * router.route("/").get(getAllController)
  *
  * @description Request/Response handler function to get all of a resource.
@@ -46,6 +47,7 @@ exports.getAllController = asyncMiddlewareHandler(async (req, res, next) => {
  * @example
  * const { createResourceController } = require("emfrest/controllers")
  *
+ * @example <caption>Usage</caption>
  * router.route("/").post(createResourceController)
  *
  * @description Request/Response handler function to create a resource.
@@ -87,6 +89,7 @@ exports.createResourceController = asyncMiddlewareHandler(
  * @example
  * const { getOneByIdController } = require("emfrest/controllers")
  *
+ * @example <caption>Usage</caption>
  * router.route("/:id").get(getOneByIdController)
  *
  * @description Request/Response handler function to fetch a document by its MongoDB ObjectId.
@@ -128,6 +131,7 @@ exports.getOneByIdController = asyncMiddlewareHandler(
  * @example
  * const { updateOneByIdController } = require("emfrest/controllers")
  *
+ * @example <caption>Usage</caption>
  * router.route("/:id").put(updateOneByIdController)
  *
  * @description Request/Response handler function to update a document by its MongoDB ObjectId.
@@ -171,6 +175,7 @@ exports.updateOneByIdController = asyncMiddlewareHandler(
  * @example
  * const { deleteOneByIdController } = require("emfrest/controllers")
  *
+ * @example <caption>Usage</caption>
  * router.route("/:id").delete(deleteOneByIdController)
  *
  * @description Request/Response handler function to delete a document by its MongoDB ObjectId.

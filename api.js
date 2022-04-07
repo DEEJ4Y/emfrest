@@ -4,6 +4,7 @@ const { emfRouter } = require("./router");
  * @example
  * const { emfAPI } = require("emfrest")
  *
+ * @example <caption>Usage</caption>
  * emfAPI(app, { model: Book, modelName: "book" });
  *
  * @description Entry point for the RESTful API.

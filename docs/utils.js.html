@@ -97,6 +97,7 @@
  * @example
  * const { ErrorResponse } = require("emfrest/utils")
  *
+ * @example &lt;caption>Usage&lt;/caption>
  * error = new ErrorResponse(message, statusCode);
  *
  * @description Class to add a message and status code to the error object.
@@ -118,6 +119,7 @@ exports.ErrorResponse = class ErrorResponse extends Error {
  * @example
  * const { connectDB } = require("emfrest")
  *
+ * @example &lt;caption>Usage&lt;/caption>
  * connectDB(MONGODB_URI)
  *
  * @description Connect to a Mongodb database.
@@ -138,6 +140,7 @@ exports.connectDB = async (uri) => {
  * @example
  * const { handlePromiseRejections } = require("emfrest")
  *
+ * @example &lt;caption>Usage&lt;/caption>
  * handlePromiseRejections(server)
  *
  * @description Function to handle promise rejections.
