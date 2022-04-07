@@ -201,3 +201,7 @@ const server = app.listen(PORT, () =>
 
 handlePromiseRejections(server);
 ```
+
+## Reusable functions
+
+Have a look at the list of [reusable functions](https://deej4y.github.io/emfrest/global.html).

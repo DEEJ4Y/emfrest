@@ -34,7 +34,6 @@ exports.connectDB = async (uri) => {
 };
 
 /**
- * @exports emfrest/utils
  *
  * @description Function to handle promise rejections.
  *

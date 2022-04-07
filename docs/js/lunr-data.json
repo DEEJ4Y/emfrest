@@ -59,12 +59,6 @@
           "list",
           "list:class"
         ],
-        "list_module.html": [
-          "document",
-          "list",
-          "list:modul",
-          "modul"
-        ],
         "ErrorResponse.html": [
           "add",
           "class",
@@ -74,18 +68,9 @@
           "messag",
           "object",
           "statu"
-        ],
-        "module-emfrest_utils.html": [
-          "emfrest/util",
-          "function",
-          "handl",
-          "modul",
-          "module:emfrest/util",
-          "promis",
-          "reject"
         ]
       },
-      "length": 6
+      "length": 4
     },
     "tokenStore": {
       "root": {
@@ -132,26 +117,6 @@
                         "index.html": {
                           "ref": "index.html",
                           "tf": 600
-                        }
-                      },
-                      "/": {
-                        "docs": {},
-                        "u": {
-                          "docs": {},
-                          "t": {
-                            "docs": {},
-                            "i": {
-                              "docs": {},
-                              "l": {
-                                "docs": {
-                                  "module-emfrest_utils.html": {
-                                    "ref": "module-emfrest_utils.html",
-                                    "tf": 600
-                                  }
-                                }
-                              }
-                            }
-                          }
                         }
                       }
                     }
@@ -242,32 +207,6 @@
                 }
               }
             }
-          },
-          "u": {
-            "docs": {},
-            "n": {
-              "docs": {},
-              "c": {
-                "docs": {},
-                "t": {
-                  "docs": {},
-                  "i": {
-                    "docs": {},
-                    "o": {
-                      "docs": {},
-                      "n": {
-                        "docs": {
-                          "module-emfrest_utils.html": {
-                            "ref": "module-emfrest_utils.html",
-                            "tf": 12.5
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
           }
         },
         "i": {
@@ -307,71 +246,6 @@
                         "index.html": {
                           "ref": "index.html",
                           "tf": 14
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "d": {
-              "docs": {},
-              "u": {
-                "docs": {},
-                "l": {
-                  "docs": {
-                    "list_module.html": {
-                      "ref": "list_module.html",
-                      "tf": 635
-                    },
-                    "module-emfrest_utils.html": {
-                      "ref": "module-emfrest_utils.html",
-                      "tf": 110
-                    }
-                  },
-                  "e": {
-                    "docs": {},
-                    ":": {
-                      "docs": {},
-                      "e": {
-                        "docs": {},
-                        "m": {
-                          "docs": {},
-                          "f": {
-                            "docs": {},
-                            "r": {
-                              "docs": {},
-                              "e": {
-                                "docs": {},
-                                "s": {
-                                  "docs": {},
-                                  "t": {
-                                    "docs": {},
-                                    "/": {
-                                      "docs": {},
-                                      "u": {
-                                        "docs": {},
-                                        "t": {
-                                          "docs": {},
-                                          "i": {
-                                            "docs": {},
-                                            "l": {
-                                              "docs": {
-                                                "module-emfrest_utils.html": {
-                                                  "ref": "module-emfrest_utils.html",
-                                                  "tf": 1300
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
                         }
                       }
                     }
@@ -429,23 +303,6 @@
                   }
                 }
               }
-            },
-            "j": {
-              "docs": {},
-              "e": {
-                "docs": {},
-                "c": {
-                  "docs": {},
-                  "t": {
-                    "docs": {
-                      "module-emfrest_utils.html": {
-                        "ref": "module-emfrest_utils.html",
-                        "tf": 12.5
-                      }
-                    }
-                  }
-                }
-              }
             }
           }
         },
@@ -471,10 +328,6 @@
                           },
                           "list_class.html": {
                             "ref": "list_class.html",
-                            "tf": 35
-                          },
-                          "list_module.html": {
-                            "ref": "list_module.html",
                             "tf": 35
                           }
                         }
@@ -558,10 +411,6 @@
                   "list_class.html": {
                     "ref": "list_class.html",
                     "tf": 110
-                  },
-                  "list_module.html": {
-                    "ref": "list_module.html",
-                    "tf": 110
                   }
                 },
                 ":": {
@@ -578,26 +427,6 @@
                             "docs": {
                               "list_class.html": {
                                 "ref": "list_class.html",
-                                "tf": 1300
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  },
-                  "m": {
-                    "docs": {},
-                    "o": {
-                      "docs": {},
-                      "d": {
-                        "docs": {},
-                        "u": {
-                          "docs": {},
-                          "l": {
-                            "docs": {
-                              "list_module.html": {
-                                "ref": "list_module.html",
                                 "tf": 1300
                               }
                             }
@@ -653,52 +482,9 @@
               }
             }
           }
-        },
-        "h": {
-          "docs": {},
-          "a": {
-            "docs": {},
-            "n": {
-              "docs": {},
-              "d": {
-                "docs": {},
-                "l": {
-                  "docs": {
-                    "module-emfrest_utils.html": {
-                      "ref": "module-emfrest_utils.html",
-                      "tf": 12.5
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "p": {
-          "docs": {},
-          "r": {
-            "docs": {},
-            "o": {
-              "docs": {},
-              "m": {
-                "docs": {},
-                "i": {
-                  "docs": {},
-                  "s": {
-                    "docs": {
-                      "module-emfrest_utils.html": {
-                        "ref": "module-emfrest_utils.html",
-                        "tf": 12.5
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
         }
       },
-      "length": 33
+      "length": 22
     },
     "corpusTokens": [
       "add",
@@ -707,26 +493,18 @@
       "code",
       "document",
       "emfrest",
-      "emfrest/util",
       "error",
       "errorrespons",
       "express",
       "fast",
-      "function",
       "global",
-      "handl",
       "index",
       "list",
       "list:class",
-      "list:modul",
       "messag",
-      "modul",
-      "module:emfrest/util",
       "mongoos",
       "object",
-      "promis",
       "readm",
-      "reject",
       "rest",
       "statu"
     ],
@@ -770,17 +548,6 @@
       "description": "",
       "body": ""
     },
-    "list_module.html": {
-      "id": "list_module.html",
-      "kind": "list",
-      "title": "Modules",
-      "longname": "list:module",
-      "name": "Modules",
-      "tags": "list:module",
-      "summary": "All documented modules.",
-      "description": "",
-      "body": ""
-    },
     "ErrorResponse.html": {
       "id": "ErrorResponse.html",
       "kind": "class",
@@ -790,17 +557,6 @@
       "tags": "ErrorResponse",
       "summary": "",
       "description": "Class to add a message and status code to the error object.",
-      "body": ""
-    },
-    "module-emfrest_utils.html": {
-      "id": "module-emfrest_utils.html",
-      "kind": "module",
-      "title": "emfrest/utils",
-      "longname": "module:emfrest/utils",
-      "name": "emfrest/utils",
-      "tags": "module:emfrest/utils",
-      "summary": "",
-      "description": "Function to handle promise rejections.",
       "body": ""
     }
   }
