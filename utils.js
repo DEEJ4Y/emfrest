@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
 /**
+ * @example
+ * const { ErrorResponse } = require("emfrest/utils")
+ * error = new ErrorResponse(message, statusCode);
  *
  * @description Class to add a message and status code to the error object.
  */
@@ -18,6 +21,9 @@ exports.ErrorResponse = class ErrorResponse extends Error {
 };
 
 /**
+ * @example
+ * const { connectDB } = require("emfrest/utils")
+ * connectDB(MONGODB_URI)
  *
  * @description Connect to a Mongodb database.
  *
@@ -34,6 +40,9 @@ exports.connectDB = async (uri) => {
 };
 
 /**
+ * @example
+ * const { handlePromiseRejections } = require("emfrest/utils")
+ * handlePromiseRejections(server)
  *
  * @description Function to handle promise rejections.
  *

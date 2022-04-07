@@ -1,6 +1,13 @@
 const { ErrorResponse } = require("./utils");
 
 /**
+ * @example
+ * const { asyncMiddlewareHandler } = require("emfrest/middleware")
+ * const anAsyncFunction = asyncMiddlewareHandler((req, res, next) => {
+ *    const data = await something()
+ *
+ *    next()
+ * })
  *
  * @description Wrapper for any async middleware functions.
  *
@@ -16,8 +23,15 @@ exports.asyncMiddlewareHandler = (fn) => (req, res, next) =>
   Promise.resolve(fn(req, res, next)).catch(next);
 
 /**
+ * @example
+ * const { asyncHandler } = require("emfrest/middleware")
+ * const anAsyncFunction = asyncHandler((a, b, c, d, e) => {
+ *    const data = await something()
  *
- * @description Wrapper for any async functions.
+ *    return data
+ * })
+ *
+ * @description Wrapper for any async functions. Handles the error
  *
  * @param {function} fn Async function to be wrapped.
  *
@@ -38,6 +52,9 @@ exports.asyncHandler = (fn) => async (a, b, c, d, e) => {
 };
 
 /**
+ * @example
+ * const { errorHandler } = require("emfrest/middleware")
+ * app.use(errorHandler);
  *
  * @description Function to send a response with an error.
  *
@@ -79,6 +96,14 @@ exports.errorHandler = (err, req, res, next) => {
 };
 
 /**
+ * @example
+ * const { successfulResponse } = require("emfrest/middleware")
+ * successfulResponse(
+ *   res,
+ *   200,
+ *   `The documents were successfully found.`,
+ *   data
+ * );
  *
  * @description Function to send a successful response.
  *
@@ -96,8 +121,15 @@ exports.successfulResponse = (res, statusCode, message, data) => {
 };
 
 /**
+ * @example
+ * const { appendModelData } = require("emfrest/middleware")
+ * router
+ *  .route(`/:${modelName}Id`)
+ *  .get(appendModelData(model, modelName), getOneByIdController)
+ *  .put(appendModelData(model, modelName), updateOneByIdController)
+ *  .delete(appendModelData(model, modelName), deleteOneByIdController);
  *
- * @description Middleware function to add model and modelName to the request object.
+ * @description Middleware function to add model and modelName to the request object. Makes req.emfrest_model and req.emfrest_modelName accessible.
  *
  * @param {mongoose.model} model Mongoose model.
  * @param {string} modelName Model name (singular).

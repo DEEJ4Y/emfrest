@@ -2,7 +2,7 @@
 
 Quickly build RESTful APIs with Express and Mongoose.
 
-[Documentation](https://deej4y.github.io/emfrest/)
+[Documentation](https://deej4y.github.io/emfrest/) [reusable functions](https://deej4y.github.io/emfrest/global.html)
 
 [Github](https://github.com/DEEJ4Y/emfrest)
 
