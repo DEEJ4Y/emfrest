@@ -1,6 +1,14 @@
 const mongoose = require("mongoose");
 
 /**
+ * @namespace utils
+ *
+ * @description Utility functions to code faster.
+ */
+
+/**
+ * @memberof utils
+ *
  * @example
  * const { ErrorResponse } = require("emfrest/utils")
  *
@@ -23,6 +31,8 @@ exports.ErrorResponse = class ErrorResponse extends Error {
 };
 
 /**
+ * @memberof utils
+ *
  * @example
  * const { connectDB } = require("emfrest")
  *
@@ -44,6 +54,8 @@ exports.connectDB = async (uri) => {
 };
 
 /**
+ * @memberof utils
+ *
  * @example
  * const { handlePromiseRejections } = require("emfrest")
  *

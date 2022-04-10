@@ -1,6 +1,14 @@
 const { asyncHandler } = require("./middleware");
 
 /**
+ * @namespace services
+ *
+ * @description Service functions are used to make calls to your MongoDB database using your mongoose model.
+ */
+
+/**
+ * @memberof services
+ *
  * @example
  * const { getAllService } = require("emfrest/services")
  *
@@ -21,6 +29,8 @@ exports.getAllService = asyncHandler(async (model, query) => {
 });
 
 /**
+ * @memberof services
+ *
  * @example
  * const { createResourceService } = require("emfrest/services")
  *
@@ -40,6 +50,8 @@ exports.createResourceService = asyncHandler(async (model, data) => {
 });
 
 /**
+ * @memberof services
+ *
  * @example
  * const { getOneByIdService } = require("emfrest/services")
  *
@@ -59,6 +71,8 @@ exports.getOneByIdService = asyncHandler(async (model, id) => {
 });
 
 /**
+ * @memberof services
+ *
  * @example
  * const { updateOneByIdService } = require("emfrest/services")
  *
@@ -82,6 +96,8 @@ exports.updateOneByIdService = asyncHandler(async (model, id, newData) => {
 });
 
 /**
+ * @memberof services
+ *
  * @example
  * const { deleteByIdService } = require("emfrest/services")
  *

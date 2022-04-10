@@ -210,19 +210,19 @@ handlePromiseRejections(server);
 
 Service functions are used to make calls to your MongoDB database using your mongoose model.
 
-1. [Get All documents of a model with a query(optional).](https://deej4y.github.io/emfrest/global.html#getAllService)
-2. [Create a document.](https://deej4y.github.io/emfrest/global.html#createResourceService)
-3. [Get a document by its ObjectId.](https://deej4y.github.io/emfrest/global.html#getOneByIdService)
-4. [Update a document by its ObjectId.](https://deej4y.github.io/emfrest/global.html#updateOneByIdService)
-5. [Delete a document by its ObjectId.](https://deej4y.github.io/emfrest/global.html#deleteByIdService)
+1. [Get All documents of a model with a query(optional).](https://deej4y.github.io/emfrest/services.html#.exports.getAllService)
+2. [Create a document.](https://deej4y.github.io/emfrest/services.html#.exports.createResourceService)
+3. [Get a document by its ObjectId.](https://deej4y.github.io/emfrest/services.html#.exports.getOneByIdService)
+4. [Update a document by its ObjectId.](https://deej4y.github.io/emfrest/services.html#.exports.updateOneByIdService)
+5. [Delete a document by its ObjectId.](https://deej4y.github.io/emfrest/services.html#.exports.html#deleteByIdService)
 
 ### Utilities
 
 Utility functions to code faster
 
-1. [Create an error object with a message and http status code](https://deej4y.github.io/emfrest/ErrorResponse.html#newerrorresponse-message-statuscode).
-2. [Connect to a MongoDB database](https://deej4y.github.io/emfrest/global.html#connectDB).
-3. [Promise rejection handler](https://deej4y.github.io/emfrest/global.html#handlePromiseRejections).
+1. [Create an error object with a message and http status code](https://deej4y.github.io/emfrest/utils.html#exports.newerrorresponse-message-statuscode).
+2. [Connect to a MongoDB database](https://deej4y.github.io/emfrest/utils.html#exports.connectDB).
+3. [Promise rejection handler](https://deej4y.github.io/emfrest/utils.html#exports.handlePromiseRejections).
 
 ## Liked emfrest?
 
