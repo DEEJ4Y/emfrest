@@ -214,15 +214,15 @@ Service functions are used to make calls to your MongoDB database using your mon
 2. [Create a document.](https://deej4y.github.io/emfrest/services.html#.exports.createResourceService)
 3. [Get a document by its ObjectId.](https://deej4y.github.io/emfrest/services.html#.exports.getOneByIdService)
 4. [Update a document by its ObjectId.](https://deej4y.github.io/emfrest/services.html#.exports.updateOneByIdService)
-5. [Delete a document by its ObjectId.](https://deej4y.github.io/emfrest/services.html#.exports.html#deleteByIdService)
+5. [Delete a document by its ObjectId.](https://deej4y.github.io/emfrest/services.html#.exports.deleteByIdService)
 
 ### Utilities
 
 Utility functions to code faster
 
-1. [Create an error object with a message and http status code](https://deej4y.github.io/emfrest/utils.html#exports.newerrorresponse-message-statuscode).
-2. [Connect to a MongoDB database](https://deej4y.github.io/emfrest/utils.html#exports.connectDB).
-3. [Promise rejection handler](https://deej4y.github.io/emfrest/utils.html#exports.handlePromiseRejections).
+1. [Create an error object with a message and http status code](https://deej4y.github.io/emfrest/utils.html#exports.ErrorResponse).
+2. [Connect to a MongoDB database](https://deej4y.github.io/emfrest/utils.html#.exports.connectDB).
+3. [Promise rejection handler](https://deej4y.github.io/emfrest/utils.html#.exports.handlePromiseRejections).
 
 ## Liked emfrest?
 
