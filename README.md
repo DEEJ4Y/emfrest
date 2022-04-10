@@ -8,7 +8,7 @@ Quickly build RESTful APIs with Express and Mongoose.
 
 [npm](https://www.npmjs.com/package/emfrest)
 
-Have a look at the list of [reusable functions](https://deej4y.github.io/emfrest/global.html).
+Have a look at the list of [service and utility functions](https://deej4y.github.io/emfrest/list_namespace.html) and other [middleware and global functions](https://deej4y.github.io/emfrest/global.html#methods).
 
 ## Installation
 
