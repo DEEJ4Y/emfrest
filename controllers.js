@@ -193,7 +193,7 @@ exports.deleteOneByIdController = asyncMiddlewareHandler(
 
     const resourceId = req.params[`${modelName}Id`];
 
-    await deleteByIdService(model, resourceId);
+    const data = await deleteByIdService(model, resourceId);
 
     if (!data) {
       return next(
