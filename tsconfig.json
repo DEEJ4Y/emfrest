@@ -1,0 +1,21 @@
+{
+  "extends": "./node_modules/@tsconfig/node16/tsconfig.json",
+
+  "compilerOptions": {
+    "outDir": "./lib",
+    "removeComments": false,
+    "rootDir": "./src"
+  },
+
+  "exclude": ["node_modules", "src/example.ts"],
+  "include": ["src"],
+
+  "watchOptions": {
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents",
+    "fallbackPolling": "dynamicPriority",
+    "synchronousWatchDirectory": true,
+    "excludeDirectories": ["**/node_modules"],
+    "excludeFiles": []
+  }
+}

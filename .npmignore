@@ -1,4 +1,3 @@
-/docs
 /node_modules
-/tests
-jsdoc.config.json
+/docs
+/src

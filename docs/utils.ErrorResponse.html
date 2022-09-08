@@ -1,10 +1,9 @@
-<!-- start:source.tmpl.hbs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-		<title>utils.js</title>
+		<title>utils.ErrorResponse</title>
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -42,7 +41,7 @@
 			</style>
 		<script type="text/javascript">
 			window.TEMPLATE_OPTIONS = {"includeDate":true,"dateFormat":"Do MMM YYYY","systemName":"emfrest","systemSummary":"Express Mongoose Fast REST API","systemLogo":"","systemColor":"#198754","navMembers":[{"kind":"class","title":"Classes","summary":"All documented classes."},{"kind":"external","title":"Externals","summary":"All documented external members."},{"kind":"global","title":"Globals","summary":"All documented globals."},{"kind":"mixin","title":"Mixins","summary":"All documented mixins."},{"kind":"interface","title":"Interfaces","summary":"All documented interfaces."},{"kind":"module","title":"Modules","summary":"All documented modules."},{"kind":"namespace","title":"Namespaces","summary":"All documented namespaces."},{"kind":"tutorial","title":"Tutorials","summary":"All available tutorials."}],"footer":"Copyright © The contributors of emfrest.","copyright":"","linenums":true,"collapseSymbols":true,"inverseNav":true,"inlineNav":true,"outputSourceFiles":true,"sourceRootPath":null,"disablePackagePath":true,"outputSourcePath":false,"showTableOfContents":true,"showAccessFilter":true,"analytics":null,"methodHeadingReturns":true,"sort":"linenum, longname, version, since","search":false,"favicon":null,"stylesheets":[],"scripts":[],"monospaceLinks":false,"cleverLinks":false};
-			window.DOCLET_TOC_ENABLED = false;
+			window.DOCLET_TOC_ENABLED = true;
 			window.DOCLET_AFILTER_ENABLED = false;
 		</script>
 </head>
@@ -72,95 +71,99 @@
 	</header>
 	<!-- end:navbar.hbs -->		<div class="page-header">
 			<div class="container">
-				<span class="kind">source</span>
-				<h1><span class="name">utils.js</span></h1>
+				<span class="kind">class</span>
+				<h1><span class="ancestors"><a href="utils.html">utils</a>.</span><span class="name">ErrorResponse</span></h1>
 			</div>
 		</div>
 	<div class="container content">
 		<div class="row">
-			<div class="col-md-12 main-content">
-		<section class="source-section">
-			<article></article>
-			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">"use strict";
-var __importDefault = (this &amp;&amp; this.__importDefault) || function (mod) {
-    return (mod &amp;&amp; mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.handlePromiseRejections = exports.connectDB = exports.ErrorResponse = void 0;
-const mongoose_1 = __importDefault(require("mongoose"));
-/**
- * @namespace utils
- *
- * @description Utility functions to code faster.
- */
-/**
- * @memberof utils
- *
- * @example
- * const { ErrorResponse } = require("emfrest/utils")
- *
- * @example &lt;caption>Usage&lt;/caption>
- * error = new ErrorResponse(message, statusCode);
- *
- * @description Class to add a message and status code to the error object.
- */
-class ErrorResponse extends Error {
-    /**
-     * @param {string} message Message to be added to the error object.
-     * @param {number} statusCode HTTP Status code to be added to the error object
-     */
-    constructor(message, statusCode) {
-        super(message);
-        this.statusCode = statusCode;
-        Error.captureStackTrace(this, this.constructor);
-    }
-}
-exports.ErrorResponse = ErrorResponse;
-/**
- * @memberof utils
- *
- * @example
- * const { connectDB } = require("emfrest")
- *
- * @example &lt;caption>Usage&lt;/caption>
- * connectDB(MONGODB_URI)
- *
- * @description Connect to a Mongodb database.
- *
- * @param {string} uri MongoDB connection string/URI
- */
-const connectDB = async (uri) => {
-    console.log("Connecting to MongoDB...");
-    const conn = await mongoose_1.default.connect(uri);
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-};
-exports.connectDB = connectDB;
-/**
- * @memberof utils
- *
- * @example
- * const { handlePromiseRejections } = require("emfrest")
- *
- * @example &lt;caption>Usage&lt;/caption>
- * handlePromiseRejections(server)
- *
- * @description Function to handle promise rejections.
- *
- * @param {Http2Server} server Server instance returned by the Express app.listen() method.
- */
-const handlePromiseRejections = (server) => {
-    process.on("unhandledRejection", (err, promise) => {
-        console.log(`Error: ${err}`);
-        // Close server and exit
-        server.close(() => {
-            process.exit(1);
-        });
-    });
-};
-exports.handlePromiseRejections = handlePromiseRejections;
-</code></pre>
-		</section>
+			<div class="col-md-9 main-content">
+						<ol class="breadcrumb">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="list_class.html">Classes</a></li>
+							<li class="active"><a href="utils.html">utils</a>.ErrorResponse</li>
+						</ol>
+					<section>
+							<dl class="symbol primary">
+								<dt class="symbol-title class collapsible-symbol expanded">
+			<h2 class="class"><span class="signature-new">new&nbsp;</span><span class="name">ErrorResponse</span><span class="signature-params">( <span class="signature-param">message</span>, <span class="signature-param">statusCode</span>&nbsp;)</span><span class="signature-type"></span></h2>
+</dt>
+<dd class="symbol-details class  collapsible-symbol expanded" style="max-height: 9999px;">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description">Class to add a message and status code to the error object.</div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>message</code></td>
+							<td><span class="param-type">string</span></td>
+							<td class="last">
+									Message to be added to the error object.
+							</td>
+						</tr>
+						<tr>
+								<td><code>statusCode</code></td>
+							<td><span class="param-type">number</span></td>
+							<td class="last">
+									HTTP Status code to be added to the error object
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
+			<div class="callout callout-example"><h5>Examples</h5>		<div class="example-code">
+						<pre class="prettyprint source language-javascript"><code class="language-javascript">const { ErrorResponse } &#x3D; require(&quot;emfrest/utils&quot;)</code></pre>
+					</div>
+					<div class="example-caption"><p>Usage</p></div>
+					<div class="example-code">
+						<pre class="prettyprint source language-javascript"><code class="language-javascript">error &#x3D; new ErrorResponse(message, statusCode);</code></pre>
+					</div>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="utils.js.html">utils.js</a>, <a href="utils.js.html#line-24">line 24</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+							</dl>
+							<article class="secondary">
+							</article>
+					</section>
+			</div>
+				<div class="col-md-3 side-content">
+					<nav class="toc hidden-print hidden-sm hidden-xs"></nav>
+				</div>
 		</div>
 	</div>
 	<footer>
@@ -175,4 +178,3 @@ exports.handlePromiseRejections = handlePromiseRejections;
 	
 </body>
 </html>
-<!-- end:source.tmpl.hbs -->

@@ -81,8 +81,10 @@
 			<div class="col-md-12 main-content">
 		<section class="source-section">
 			<article></article>
-			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">const { ErrorResponse } = require("./utils");
-
+			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.appendModelData = exports.successfulResponse = exports.errorHandler = exports.asyncHandler = exports.asyncMiddlewareHandler = void 0;
+const utils_1 = require("./utils");
 /**
  * @example
  * const { asyncMiddlewareHandler } = require("emfrest/middleware")
@@ -95,17 +97,16 @@
  *
  * @description Wrapper for any async middleware functions.
  *
- * @param {function} fn Async middleware function to be wrapped.
+ * @param {Function} fn Async express middleware function to be wrapped.
  *
- * @param {express.request} req Express request object.
- * @param {express.response} res Express response object.
- * @param {express.next} next Express next object.
- *
- * @returns {object} A resolved promise or an error.
+ * @returns {Promise&lt;any>} A resolved promise or an error.
  */
-exports.asyncMiddlewareHandler = (fn) => (req, res, next) =>
-  Promise.resolve(fn(req, res, next)).catch(next);
-
+const asyncMiddlewareHandler = (fn) => {
+    return (req, res, next) => {
+        return Promise.resolve(fn(req, res, next)).catch(next);
+    };
+};
+exports.asyncMiddlewareHandler = asyncMiddlewareHandler;
 /**
  * @example
  * const { asyncHandler } = require("emfrest/middleware")
@@ -119,24 +120,19 @@ exports.asyncMiddlewareHandler = (fn) => (req, res, next) =>
  *
  * @description Wrapper for any async functions. Handles the error
  *
- * @param {function} fn Async function to be wrapped.
+ * @param {Function} fn Async function to be wrapped. This function can have any number of parameters.
  *
- * @param {any} a First param of fn.
- * @param {any} b Second param of fn.
- * @param {any} c Third param of fn.
- * @param {any} d Fourth param of fn.
- * @param {any} e Fifth param of fn.
- *
- * @returns {object} A resolved promise or an error.
+ * @returns {Promise&lt;any>} A resolved promise or an error.
  */
-exports.asyncHandler = (fn) => async (a, b, c, d, e) => {
-  try {
-    return await fn(a, b, c, d, e);
-  } catch (err) {
-    return err;
-  }
+const asyncHandler = (fn) => async (...rest) => {
+    try {
+        return await fn(...rest);
+    }
+    catch (err) {
+        return err;
+    }
 };
-
+exports.asyncHandler = asyncHandler;
 /**
  * @example
  * const { errorHandler } = require("emfrest")
@@ -146,43 +142,39 @@ exports.asyncHandler = (fn) => async (a, b, c, d, e) => {
  *
  * @description Function to send a response with an error.
  *
- * @param {object} err Error object.
- * @param {express.request} req Express request object.
- * @param {express.response} res Express response object.
- * @param {express.next} next Express next function.
+ * @param {Error} err Error object.
+ * @param {Request} req Express request object.
+ * @param {Response} res Express response object.
+ * @param {Next} next Express next function.
  */
-exports.errorHandler = (err, req, res, next) => {
-  let error = { ...err };
-
-  error.message = err.message;
-
-  // Log to console for dev
-  console.log(err);
-
-  // Mongoose bad ObjectId
-  if (err.name === "CastError") {
-    const message = `Resource not found`;
-    error = new ErrorResponse(message, 404);
-  }
-
-  // Mongoose duplicate key
-  if (err.code === 11000) {
-    const message = "Duplicate field value entered";
-    error = new ErrorResponse(message, 400);
-  }
-
-  // Mongoose validation error
-  if (err.name === "ValidationError") {
-    const message = Object.values(err.errors).map((val) => val.message);
-    error = new ErrorResponse(message, 400);
-  }
-
-  res.status(error.statusCode || 500).json({
-    success: false,
-    error: error.message || "Server Error",
-  });
+const errorHandler = (err, req, res, next) => {
+    let error = { ...err };
+    error.message = err.message;
+    // Log to console for dev
+    console.log(err);
+    // Mongoose bad ObjectId
+    if (err.name === "CastError") {
+        const message = `Resource not found`;
+        error = new utils_1.ErrorResponse(message, 404);
+    }
+    // Mongoose duplicate key
+    if (err.code === 11000) {
+        const message = "Duplicate field value entered";
+        error = new utils_1.ErrorResponse(message, 400);
+    }
+    // Mongoose validation error
+    if (err.name === "ValidationError") {
+        const message = Object.values(err.errors)
+            .map((val) => val.message)
+            .join(", ");
+        error = new utils_1.ErrorResponse(message, 400);
+    }
+    res.status(error.statusCode || 500).json({
+        success: false,
+        error: error.message || "Server Error",
+    });
 };
-
+exports.errorHandler = errorHandler;
 /**
  * @example
  * const { successfulResponse } = require("emfrest/middleware")
@@ -197,19 +189,19 @@ exports.errorHandler = (err, req, res, next) => {
  *
  * @description Function to send a successful response.
  *
- * @param {express.response} res Express response object.
+ * @param {Response} res Express response object.
  * @param {number} statusCode Http status code for the response.
  * @param {string} message Message for the response body.
  * @param {any} data Any data to send with the reponse.
  */
-exports.successfulResponse = (res, statusCode, message, data) => {
-  res.status(statusCode).json({
-    success: true,
-    message: message,
-    data: data,
-  });
+const successfulResponse = (res, statusCode, message, data) => {
+    res.status(statusCode).json({
+        success: true,
+        message: message,
+        data: data,
+    });
 };
-
+exports.successfulResponse = successfulResponse;
 /**
  * @example
  * const { appendModelData } = require("emfrest/middleware")
@@ -228,12 +220,14 @@ exports.successfulResponse = (res, statusCode, message, data) => {
  *
  * @returns {function} An express middleware function
  */
-exports.appendModelData = (model, modelName) => (req, res, next) => {
-  req.emfrest_model = model;
-  req.emfrest_modelName = modelName;
-
-  next();
+const appendModelData = (model, modelName) => {
+    return (req, res, next) => {
+        req.emfrest_model = model;
+        req.emfrest_modelName = modelName;
+        next();
+    };
 };
+exports.appendModelData = appendModelData;
 </code></pre>
 		</section>
 			</div>
@@ -241,7 +235,7 @@ exports.appendModelData = (model, modelName) => (req, res, next) => {
 	</div>
 	<footer>
 				<div class="footer-option">Copyright © The contributors of emfrest.</div>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on 8th Sep 2022 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on 8th Sep 2022 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

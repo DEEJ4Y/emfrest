@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-		<title>utils.js</title>
+		<title>example.js</title>
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -73,7 +73,7 @@
 	<!-- end:navbar.hbs -->		<div class="page-header">
 			<div class="container">
 				<span class="kind">source</span>
-				<h1><span class="name">utils.js</span></h1>
+				<h1><span class="name">example.js</span></h1>
 			</div>
 		</div>
 	<div class="container content">
@@ -82,82 +82,43 @@
 		<section class="source-section">
 			<article></article>
 			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">"use strict";
+/**
+ * This file contains the development server to test out the modules in the package.
+ */
 var __importDefault = (this &amp;&amp; this.__importDefault) || function (mod) {
     return (mod &amp;&amp; mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.handlePromiseRejections = exports.connectDB = exports.ErrorResponse = void 0;
+const express_1 = __importDefault(require("express"));
+const index_1 = require("./index");
+(0, index_1.connectDB)("mongodb://localhost:27017/library");
 const mongoose_1 = __importDefault(require("mongoose"));
-/**
- * @namespace utils
- *
- * @description Utility functions to code faster.
- */
-/**
- * @memberof utils
- *
- * @example
- * const { ErrorResponse } = require("emfrest/utils")
- *
- * @example &lt;caption>Usage&lt;/caption>
- * error = new ErrorResponse(message, statusCode);
- *
- * @description Class to add a message and status code to the error object.
- */
-class ErrorResponse extends Error {
-    /**
-     * @param {string} message Message to be added to the error object.
-     * @param {number} statusCode HTTP Status code to be added to the error object
-     */
-    constructor(message, statusCode) {
-        super(message);
-        this.statusCode = statusCode;
-        Error.captureStackTrace(this, this.constructor);
-    }
-}
-exports.ErrorResponse = ErrorResponse;
-/**
- * @memberof utils
- *
- * @example
- * const { connectDB } = require("emfrest")
- *
- * @example &lt;caption>Usage&lt;/caption>
- * connectDB(MONGODB_URI)
- *
- * @description Connect to a Mongodb database.
- *
- * @param {string} uri MongoDB connection string/URI
- */
-const connectDB = async (uri) => {
-    console.log("Connecting to MongoDB...");
-    const conn = await mongoose_1.default.connect(uri);
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-};
-exports.connectDB = connectDB;
-/**
- * @memberof utils
- *
- * @example
- * const { handlePromiseRejections } = require("emfrest")
- *
- * @example &lt;caption>Usage&lt;/caption>
- * handlePromiseRejections(server)
- *
- * @description Function to handle promise rejections.
- *
- * @param {Http2Server} server Server instance returned by the Express app.listen() method.
- */
-const handlePromiseRejections = (server) => {
-    process.on("unhandledRejection", (err, promise) => {
-        console.log(`Error: ${err}`);
-        // Close server and exit
-        server.close(() => {
-            process.exit(1);
-        });
-    });
-};
-exports.handlePromiseRejections = handlePromiseRejections;
+const BookSchema = new mongoose_1.default.Schema({
+    name: {
+        type: String,
+    },
+    description: {
+        type: String,
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    },
+});
+const Book = mongoose_1.default.model("Book", BookSchema);
+const app = (0, express_1.default)();
+app.use(express_1.default.json());
+(0, index_1.Api)(app, {
+    model: Book,
+    modelName: "book",
+});
+app.get("/", (req, res) => {
+    res.json({ success: true, message: "Check your api endpoint" });
+});
+app.use(index_1.errorHandler);
+const PORT = process.env.PORT || 3000;
+const server = app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+(0, index_1.handlePromiseRejections)(server);
 </code></pre>
 		</section>
 			</div>
