@@ -1,10 +1,10 @@
 {
   "name": "emfrest",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "description": "Quickly build RESTful APIs with Express and Mongoose.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --timeout 10000 --exit --file test/interceptFailures.js",
     "docs": "jsdoc ./ -c ./jsdoc.config.json -d ./docs/ -t ./node_modules/foodoc/template -R README.md",
     "deploy-docs": "npm run docs && git add . && git commit -m \"chore: Add updated documentation\" && git push"
   },
@@ -33,6 +33,9 @@
     "mongoose": "^6.2.9"
   },
   "devDependencies": {
-    "foodoc": "^0.0.9"
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "foodoc": "^0.0.9",
+    "mocha": "^10.0.0"
   }
 }

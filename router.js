@@ -11,10 +11,10 @@ const router = require("express").Router({ mergeParams: true });
 
 /**
  * @example
- * const { emfRouter } = require("emfrest/router")
+ * const { Router } = require("emfrest/router")
  *
  * @example <caption>Usage</caption>
- * app.use("/modelName", emfRouter(model, modelName))
+ * app.use("/modelName", Router(model, modelName))
  *
  * @description An express router for a resource.
  *
@@ -23,7 +23,7 @@ const router = require("express").Router({ mergeParams: true });
  *
  * @returns An express router.
  */
-exports.emfRouter = (model, modelName) => {
+exports.Router = (model, modelName) => {
   router
     .route(`/`)
     .get(appendModelData(model, modelName), getAllController)

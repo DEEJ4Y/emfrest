@@ -22,19 +22,19 @@ This also installs express and mongoose, so you can dive right into making your 
 
 ### Basic
 
-Create an API using `emfAPI`.
+Create an API using `Api`.
 
 ```js
-const { emfAPI } = require("emfrest");
+const { Api } = require("emfrest");
 
-emfAPI(app, { model: Book, modelName: "book" });
+Api(app, { model: Book, modelName: "book" });
 ```
 
 Add your mongoose model as `model`, the example uses a model called `Book`.
 
 Also give it a `modelName`. The example uses `modelName` as `book`. This creates your routes at `/books`. Make sure this is singular and unique among your routes.
 
-For every `emfAPI` you create, you will get the following routes:
+For every `Api` you create, you will get the following routes:
 
 | Method | Route          |
 | :----- | :------------- |
@@ -48,10 +48,10 @@ For every `emfAPI` you create, you will get the following routes:
 
 Note: App should be connected to a database. App should also be able to read json data from requests (`body-parser` or `express.json()`).
 
-1. Require `emfAPI` and `errorHandler` from `emfrest`
+1. Require `Api` and `errorHandler` from `emfrest`
 
    ```js
-   const { emfAPI, errorHandler } = require("emfrest");
+   const { Api, errorHandler } = require("emfrest");
    ```
 
 2. Add the `errorHandler` middleware at the end of your app, before `app.listen()`.
@@ -60,10 +60,10 @@ Note: App should be connected to a database. App should also be able to read jso
    app.use(errorHandler);
    ```
 
-3. Create an API using `emfAPI`.
+3. Create an API using `Api`.
 
    ```js
-   emfAPI(app, { model: Book, modelName: "book" });
+   Api(app, { model: Book, modelName: "book" });
    ```
 
    Add your mongoose model as `model`, the example uses a model called `Book`.
@@ -102,7 +102,7 @@ Note: App should be connected to a database. App should also be able to read jso
 
    ```js
    const {
-     emfAPI,
+     Api,
      connectDB,
      errorHandler,
      handlePromiseRejections,
@@ -113,7 +113,7 @@ Note: App should be connected to a database. App should also be able to read jso
 
    You can use a connection string of your choice.
 
-   We will use `emfAPI`, `errorHandler` and `handlePromiseRejections` later.
+   We will use `Api`, `errorHandler` and `handlePromiseRejections` later.
 
 4. Create your schema and mongoose model.
 
@@ -138,10 +138,10 @@ Note: App should be connected to a database. App should also be able to read jso
    app.use(errorHandler);
    ```
 
-6. Create an API using `emfAPI`.
+6. Create an API using `Api`.
 
    ```js
-   emfAPI(app, { model: Book, modelName: "book" });
+   Api(app, { model: Book, modelName: "book" });
    ```
 
    Add your mongoose model as `model`, the example uses a model called `Book`.
@@ -159,7 +159,7 @@ Your code should now look like this:
 ```js
 const express = require("express");
 const {
-  emfAPI,
+  Api,
   connectDB,
   errorHandler,
   handlePromiseRejections,
@@ -188,7 +188,7 @@ const app = express();
 
 app.use(express.json());
 
-emfAPI(app, { model: Book, modelName: "book" });
+Api(app, { model: Book, modelName: "book" });
 
 app.get("/", (req, res) => {
   res.json({ success: true, message: "Check your api endpoint" });
