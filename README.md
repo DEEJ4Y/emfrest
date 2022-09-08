@@ -44,6 +44,42 @@ For every `Api` you create, you will get the following routes:
 | PUT    | /books/:bookId |
 | DELETE | /books/:bookId |
 
+#### Adding endpoint specific middleware
+
+You can also have endpoint specific middleware. The `preMiddleware` option takes an array of Middlewares that will run before the controller function.
+
+```js
+Api(app, {
+  model: Book,
+  modelName: "book",
+  preMiddleware: [
+    protect,
+    myMiddlewareFunction1,
+    myMiddlewareFunction2 /*...*/,
+  ],
+});
+```
+
+#### Route prefix for an endpoint
+
+If you want to serve the API from a subpath, you can use the `routePrefix` option.
+
+```js
+const { Api } = require("emfrest");
+
+Api(app, { model: Book, modelName: "book", routePrefix: "/v1" });
+```
+
+This would result in the following routes
+
+| Method | Route             |
+| :----- | :---------------- |
+| GET    | /v1/books         |
+| POST   | /v1/books         |
+| GET    | /v1/books/:bookId |
+| PUT    | /v1/books/:bookId |
+| DELETE | /v1/books/:bookId |
+
 ### Add to an existing app
 
 Note: App should be connected to a database. App should also be able to read json data from requests (`body-parser` or `express.json()`).

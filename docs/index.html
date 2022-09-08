@@ -130,6 +130,55 @@ Api(app, { model: Book, modelName: &quot;book&quot; });
 </tr>
 </tbody>
 </table>
+<h4>Adding endpoint specific middleware</h4>
+<p>You can also have endpoint specific middleware. The <code>preMiddleware</code> option takes an array of Middlewares that will run before the controller function.</p>
+<pre class="prettyprint source lang-js"><code>Api(app, {
+  model: Book,
+  modelName: &quot;book&quot;,
+  preMiddleware: [
+    protect,
+    myMiddlewareFunction1,
+    myMiddlewareFunction2 /*...*/,
+  ],
+});
+</code></pre>
+<h4>Route prefix for an endpoint</h4>
+<p>If you want to serve the API from a subpath, you can use the <code>routePrefix</code> option.</p>
+<pre class="prettyprint source lang-js"><code>const { Api } = require(&quot;emfrest&quot;);
+
+Api(app, { model: Book, modelName: &quot;book&quot;, routePrefix: &quot;/v1&quot; });
+</code></pre>
+<p>This would result in the following routes</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Method</th>
+<th style="text-align:left">Route</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">/v1/books</td>
+</tr>
+<tr>
+<td style="text-align:left">POST</td>
+<td style="text-align:left">/v1/books</td>
+</tr>
+<tr>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">/v1/books/:bookId</td>
+</tr>
+<tr>
+<td style="text-align:left">PUT</td>
+<td style="text-align:left">/v1/books/:bookId</td>
+</tr>
+<tr>
+<td style="text-align:left">DELETE</td>
+<td style="text-align:left">/v1/books/:bookId</td>
+</tr>
+</tbody>
+</table>
 <h3>Add to an existing app</h3>
 <p>Note: App should be connected to a database. App should also be able to read json data from requests (<code>body-parser</code> or <code>express.json()</code>).</p>
 <ol>
