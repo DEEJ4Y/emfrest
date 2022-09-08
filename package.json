@@ -1,6 +1,6 @@
 {
   "name": "emfrest",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "description": "Quickly build RESTful APIs with Express and Mongoose.",
   "main": "index.js",
   "scripts": {
