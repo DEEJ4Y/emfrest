@@ -1,3 +1,6 @@
 /node_modules
 /docs
 /src
+/tests
+tsconfig.json
+jsdoc.config.json

@@ -23,10 +23,10 @@ export declare const asyncMiddlewareHandler: (fn: Function) => (req: Request, re
  * const { asyncHandler } = require("emfrest/middleware")
  *
  * @example <caption>Usage</caption>
- * const anAsyncFunction = asyncHandler((a, b, c, d, e) => {
+ * const anAsyncFunction = asyncHandler((a, b, c, d, e, ...rest) => {
  *    const data = await something()
  *
- *    return data
+ *    return datas
  * })
  *
  * @description Wrapper for any async functions. Handles the error
@@ -35,7 +35,7 @@ export declare const asyncMiddlewareHandler: (fn: Function) => (req: Request, re
  *
  * @returns {Promise<any>} A resolved promise or an error.
  */
-export declare const asyncHandler: (fn: Function) => (...rest: any) => Promise<any>;
+export declare const asyncHandler: (fn: Function) => (...params: any) => Promise<any>;
 /**
  * @description Custom error interface with Mongoose and MongoDB error properties.
  */
