@@ -43,13 +43,13 @@ export const asyncMiddlewareHandler = (
  *
  * @returns {Promise<any>} A resolved promise or an error.
  */
-export const asyncHandler = (
-  fn: Function
-): ((...params: any) => Promise<any>) => {
-  return (...params) => {
-    return Promise.resolve(fn(...params)).catch(params.next);
+export function asyncHandler<F extends (...args: any[]) => any>(fn: F): F {
+  return <F>function (...params: any) {
+    return Promise.resolve(fn(...params)).catch(
+      params[2] ? params[2] : () => {}
+    );
   };
-};
+}
 
 /**
  * @description Custom error interface with Mongoose and MongoDB error properties.

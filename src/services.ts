@@ -163,7 +163,7 @@ export class Service {
    * @param {object | void} query MongoDB query
    */
   getAll = (query?: object) => {
-    return getAllService(this.model, query);
+    return getAllService(this.model, query || {});
   };
 
   /**
@@ -191,7 +191,7 @@ export class Service {
    * @param {object} newData Object with fields to be updated in the document.
    */
   updateOneByIdService = (id: mongoose.ObjectId, newData: object) => {
-    return updateOneByIdService(id, newData);
+    return updateOneByIdService(this.model, id, newData);
   };
 
   /**

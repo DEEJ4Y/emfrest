@@ -21,7 +21,7 @@ import mongoose from "mongoose";
  * @returns {object[]} The matching documents as an array of objects if successful.
  * @returns {object} A mongoose error object if unsuccessful.
  */
-export declare const getAllService: (...params: any) => Promise<any>;
+export declare const getAllService: (model: typeof mongoose.Model, query: object) => Promise<any[]>;
 /**
  * @memberof services
  *
@@ -39,7 +39,7 @@ export declare const getAllService: (...params: any) => Promise<any>;
  * @returns {object} The created document as an object if successful.
  * @returns {object} A mongoose error object if unsuccessful.
  */
-export declare const createResourceService: (...params: any) => Promise<any>;
+export declare const createResourceService: (model: typeof mongoose.Model, data: object) => Promise<any>;
 /**
  * @memberof services
  *
@@ -57,7 +57,7 @@ export declare const createResourceService: (...params: any) => Promise<any>;
  * @returns {object} The document as an object if successful.
  * @returns {object} A mongoose error object if unsuccessful.
  */
-export declare const getOneByIdService: (...params: any) => Promise<any>;
+export declare const getOneByIdService: (model: typeof mongoose.Model, id: mongoose.ObjectId) => Promise<any>;
 /**
  * @memberof services
  *
@@ -76,7 +76,7 @@ export declare const getOneByIdService: (...params: any) => Promise<any>;
  * @returns {object} The updated document as an object if successful.
  * @returns {object} A mongoose error object if unsuccessful.
  */
-export declare const updateOneByIdService: (...params: any) => Promise<any>;
+export declare const updateOneByIdService: (model: typeof mongoose.Model, id: mongoose.ObjectId, newData: object) => Promise<any>;
 /**
  * @memberof services
  *
@@ -94,7 +94,7 @@ export declare const updateOneByIdService: (...params: any) => Promise<any>;
  * @returns {object} An empty object if successful.
  * @returns {object} A mongoose error object if unsuccessful.
  */
-export declare const deleteByIdService: (...params: any) => Promise<any>;
+export declare const deleteByIdService: (model: typeof mongoose.Model, id: mongoose.ObjectId) => Promise<any>;
 /**
  * @example
  * const { Service } = require("emfrest/services")
@@ -121,7 +121,7 @@ export declare class Service {
      *
      * @param {object | void} query MongoDB query
      */
-    getAll: (query?: object) => Promise<any>;
+    getAll: (query?: object) => Promise<any[]>;
     /**
      * @description Database query to create a document.
      *

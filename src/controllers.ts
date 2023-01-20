@@ -13,6 +13,7 @@ import {
   deleteByIdService,
 } from "./services";
 import { ErrorResponse } from "./utils";
+import { ObjectId } from "mongoose";
 
 /**
  * @example
@@ -118,7 +119,10 @@ export const getOneByIdController = asyncMiddlewareHandler(
 
     const resourceId = req.params[`${modelName}Id`];
 
-    const data = await getOneByIdService(model, resourceId);
+    const data = await getOneByIdService(
+      model,
+      resourceId as unknown as ObjectId
+    );
 
     if (!data) {
       return next(
@@ -162,7 +166,11 @@ export const updateOneByIdController = asyncMiddlewareHandler(
 
     const newDocumentData = req.body;
 
-    const data = await updateOneByIdService(model, resourceId, newDocumentData);
+    const data = await updateOneByIdService(
+      model,
+      resourceId as unknown as ObjectId,
+      newDocumentData
+    );
 
     if (!data) {
       return next(
@@ -204,7 +212,10 @@ export const deleteOneByIdController = asyncMiddlewareHandler(
 
     const resourceId = req.params[`${modelName}Id`];
 
-    const data = await deleteByIdService(model, resourceId);
+    const data = await deleteByIdService(
+      model,
+      resourceId as unknown as ObjectId
+    );
 
     if (!data) {
       return next(

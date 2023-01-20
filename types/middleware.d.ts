@@ -35,7 +35,7 @@ export declare const asyncMiddlewareHandler: (fn: Function) => (req: Request, re
  *
  * @returns {Promise<any>} A resolved promise or an error.
  */
-export declare const asyncHandler: (fn: Function) => (...params: any) => Promise<any>;
+export declare function asyncHandler<F extends (...args: any[]) => any>(fn: F): F;
 /**
  * @description Custom error interface with Mongoose and MongoDB error properties.
  */
